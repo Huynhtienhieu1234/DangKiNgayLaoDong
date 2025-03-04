@@ -9,7 +9,7 @@ namespace DangKiNgayLaoDong.Areas.Admin.Controllers
     public class TrangthongtinquanlyController : Controller
     {
         // GET: Admin/Trangthongtinquanly
-        public ActionResult Index()
+        public ActionResult ThongtinQuanLy()
         {
             return View();
         }

@@ -14,10 +14,7 @@ namespace DangKiNgayLaoDong.Areas.Admin.Controllers
         {
             return View();
         }
-        public ActionResult Trangthongtinquanly()
-        {
-            return View();
-        }
+
 
     }
 }
