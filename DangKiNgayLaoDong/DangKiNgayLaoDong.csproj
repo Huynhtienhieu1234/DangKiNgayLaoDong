@@ -89,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\CSS\TrangNguoiQuanLy.css" />
+    <Content Include="Areas\Admin\CSS\Trangthongtinquanly.css" />
     <Content Include="bootstrap-5.3.3-dist\css\bootstrap-grid.css" />
     <Content Include="bootstrap-5.3.3-dist\css\bootstrap-grid.min.css" />
     <Content Include="bootstrap-5.3.3-dist\css\bootstrap-grid.rtl.css" />
@@ -165,7 +166,7 @@
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\TrangNguoiQuanLy\Trangnguoiquanly.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\_LayoutPagethontinquanly.cshtml" />
+    <Content Include="Areas\Admin\Views\Trangthongtinquanly\ThongtinQuanLy.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
