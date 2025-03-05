@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "Thông Báo";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section Head {
+    <link rel="stylesheet" href="~/Areas/Admin/CSS/ThongBao.css">
+}
+<div class="nav-content-text">
+    <span class="nav-content-text">Thông Báo</span>
+</div>
+<div class="row">
+    <!-- Menu Bên Trái -->
+    <div class="col-md-3">
+        <!-- Nút bấm để mở menu -->
+        <button class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i> Menu
+        </button>
+        <!-- Danh sách menu -->
+        <div class="box-container-menu" id="menu">
+            <a href="TrangNguoiQuanLy.html"><i class="fa fa-home"></i> Trang chủ</a>
+            <a href="TrangDKLD.html" class="icon-link">
+                <i class="fa-regular fa-calendar-plus"></i> Tạo lịch đăng
+                kí
+            </a>
+            <a href="LichLaoDong.html" class="icon-link"><i class="fa fa-calendar"></i> Lịch Lao Động</a>
+            <a href="ThongBao.html"><i class="fas fa-bell"></i> Thông báo</a>
+            <a href="Thongke.html"><i class="fa fa-bar-chart"></i> Thống kê</a>
+            <a href="XacNhanHoanThanh.html"><i class="fa fa-check-circle"></i> Xác nhận hoàn thành</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            var button = document.querySelector(".menu-toggle i");
+
+            if (menu.style.maxHeight === "0px" || menu.style.maxHeight === "") {
+                menu.style.maxHeight = "500px"; // Mở menu
+                button.classList.remove("fa-bars");
+                button.classList.add("fa-times"); // Đổi icon thành "X"
+            } else {
+                menu.style.maxHeight = "0px"; // Đóng menu
+                button.classList.remove("fa-times");
+                button.classList.add("fa-bars"); // Đổi lại icon "Menu"
+            }
+        }
+    </script>
+
+    <div class="col-md-9">
+        <div class="info-card">
+            <div class="profile-img-container">
+
+                <textarea name="thongbao" rows="4" cols="50" placeholder="Nhập thông báo tại đây..."></textarea>
+                <!-- Submit button -->
+                <input type="submit" value="Gửi">
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script>
+    document.getElementById('userMenu').addEventListener('click', function (event) {
+        event.stopPropagation();
+        document.getElementById('dropdownMenu').classList.toggle('show');
+    });
+    document.addEventListener('click', function (event) {
+        if (!document.getElementById('userMenu').contains(event.target)) {
+            document.getElementById('dropdownMenu').classList.remove('show');
+        }
+    });
+</script>
+

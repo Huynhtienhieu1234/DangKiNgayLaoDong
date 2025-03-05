@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "Thống Kê";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="nav-content-text">
+    <span class="nav-content-text">Thống Kê</span>
+</div>
+<div class="row">
+    <!-- Menu Bên Trái -->
+    <div class="col-md-3">
+        <!-- Nút bấm để mở menu -->
+        <button class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i> Menu
+        </button>
+
+        <!-- Danh sách menu -->
+        <div class="box-container-menu" id="menu">
+            <a href="TrangNguoiQuanLy.html"><i class="fa fa-home"></i> Trang chủ</a>
+            <a href="TrangDKLD.html" class="icon-link">
+                <i class="fa-regular fa-calendar-plus"></i> Tạo lịch đăng
+                kí
+            </a>
+            <a href="LichLaoDong.html" class="icon-link"><i class="fa fa-calendar"></i> Lịch Lao Động</a>
+            <a href="ThongBao.html"><i class="fas fa-bell"></i> Thông báo</a>
+            <a href="Thongke.html"><i class="fa fa-bar-chart"></i> Thống kê</a>
+            <a href="XacNhanHoanThanh.html"><i class="fa fa-check-circle"></i> Xác nhận hoàn thành</a>
+        </div>
+    </div>
+
+    <script>
+                function toggleMenu() {
+                    var menu = document.getElementById("menu");
+                    var button = document.querySelector(".menu-toggle i");
+
+                    if (menu.style.maxHeight === "0px" || menu.style.maxHeight === "") {
+                        menu.style.maxHeight = "500px"; // Mở menu
+                        button.classList.remove("fa-bars");
+                        button.classList.add("fa-times"); // Đổi icon thành "X"
+                    } else {
+                        menu.style.maxHeight = "0px"; // Đóng menu
+                        button.classList.remove("fa-times");
+                        button.classList.add("fa-bars"); // Đổi lại icon "Menu"
+                    }
+                }
+    </script>
+
+    <div class="col-md-9">
+        <div class="info-card">
+            <div class="profile-img-container">
+                <!-- Chart container -->
+                <div class="chart-container">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+                // Data for the chart
+                const data = {
+                    labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'],
+                    datasets: [{
+                        label: 'Đăng ký Ngày Lao động',
+                        data: [12, 19, 3, 5, 2, 3],
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                };
+
+                // Configuration for the chart
+                const config = {
+                    type: 'bar', // Change this to 'line', 'pie', etc. for different types of charts
+                    data: data,
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                };
+
+                // Render the chart
+                const myChart = new Chart(
+                    document.getElementById('myChart'),
+                    config
+                );
+    </script>
+</div>
+
