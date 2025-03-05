@@ -1,0 +1,183 @@
+﻿
+@{
+    ViewBag.Title = "XacNhanHoanThanh";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section Head {
+    <link rel="stylesheet" href="~/Areas/Admin/CSS/XacNhanHoanThanh.css">
+}
+<div class="nav-content-text">
+    <span class="nav-content-text">Xác Nhận Hoàn Thành</span>
+</div>
+<div class="row">
+    <!-- Menu Bên Trái -->
+    <div class="col-md-3">
+        <!-- Nút bấm để mở menu -->
+        <button class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i> Menu
+        </button>
+
+        <!-- Danh sách menu -->
+        <div class="box-container-menu" id="menu">
+            <a href="~/Admin/TrangNguoiQuanly/TrangNguoiQuanly"><i class="fa fa-home"></i> Trang chủ</a>
+            <a href="TrangDKLD.html" class="icon-link"><i class="fa-regular fa-calendar-plus"></i> Tạo lịch đăng kí</a>
+            <a href="~/Admin/LichlaoDong/LichLaodong" class="icon-link"><i class="fa fa-calendar"></i> Lịch Lao Động</a>
+            <a href="~/Admin/Thongbao/ThongBao"><i class="fas fa-bell"></i> Thông báo</a>
+            <a href="~/Admin/ThongKe/ThongKe"><i class="fa fa-bar-chart"></i> Thống kê</a>
+            <a href="~Admin/XacNhanHoanThanh/XacNhanHoanThanh"><i class="fa fa-check-circle"></i> Xác nhận hoàn thành</a>
+
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            var button = document.querySelector(".menu-toggle i");
+
+            if (menu.style.maxHeight === "0px" || menu.style.maxHeight === "") {
+                menu.style.maxHeight = "500px"; // Mở menu
+                button.classList.remove("fa-bars");
+                button.classList.add("fa-times");
+            } else {
+                menu.style.maxHeight = "0px"; // Đóng menu
+                button.classList.remove("fa-times");
+                button.classList.add("fa-bars"); // Đổi lại icon "Menu"
+            }
+        }
+    </script>
+    <div class="col-md-9">
+        <!-- Bảng Chờ Duyệt -->
+        <div class="table-title">Danh Sách Chờ Duyệt</div>
+        <div class="table-container">
+            <table class="table table-hover table-bordered">
+                <thead class="table-warning">
+                    <tr>
+                        <th>STT</th>
+                        <th>Họ và Tên</th>
+                        <th>Lớp</th>
+                        <th>Ngày Bắt Đầu</th>
+                        <th>Ngày Kết Thúc</th>
+                        <th>Kết Quả</th>
+                        <th>Trạng Thái</th>
+                        <th>Hành Động</th>
+                    </tr>
+                </thead>
+                <tbody id="table-pending">
+                    <tr>
+                        <td>1</td>
+                        <td>Huỳnh Tiến Hiểu</td>
+                        <td>ĐHCNTT22A</td>
+                        <td>01/02/2025</td>
+                        <td>18/02/2025</td>
+                        <td>18/18 Ngày</td>
+                        <td class="status-pending">Chờ duyệt</td>
+                        <td><button class="btn btn-success btn-duyet">Duyệt</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Nguyễn Văn B</td>
+                        <td>ĐHCNTT22B</td>
+                        <td>02/02/2025</td>
+                        <td>18/02/2025</td>
+                        <td>18/18 Ngày</td>
+                        <td class="status-pending">Chờ duyệt</td>
+                        <td><button class="btn btn-success btn-duyet">Duyệt</button></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Trần Thị C</td>
+                        <td>ĐHCNTT22C</td>
+                        <td>03/02/2025</td>
+                        <td>18/02/2025</td>
+                        <td>18/18 Ngày</td>
+                        <td class="status-pending">Chờ duyệt</td>
+                        <td><button class="btn btn-success btn-duyet">Duyệt</button></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Lê Văn D</td>
+                        <td>ĐHCNTT22D</td>
+                        <td>04/02/2025</td>
+                        <td>18/02/2025</td>
+                        <td>18/18 Ngày</td>
+                        <td class="status-pending">Chờ duyệt</td>
+                        <td><button class="btn btn-success btn-duyet">Duyệt</button></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Phạm Thị E</td>
+                        <td>ĐHCNTT22E</td>
+                        <td>05/02/2025</td>
+                        <td>18/02/2025</td>
+                        <td>18/18 Ngày</td>
+                        <td class="status-pending">Chờ duyệt</td>
+                        <td><button class="btn btn-success btn-duyet">Duyệt</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Bảng Đã Duyệt -->
+        <div class="table-title">Danh Sách Đã Duyệt</div>
+        <div class="table-container">
+            <table class="table table-hover table-bordered">
+                <thead class="table-success">
+                    <tr>
+                        <th>STT</th>
+                        <th>Họ và Tên</th>
+                        <th>Lớp</th>
+                        <th>Ngày Bắt Đầu</th>
+                        <th>Ngày Kết Thúc</th>
+                        <th>Trạng Thái</th>
+                    </tr>
+                </thead>
+                <tbody id="table-approved"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Gán sự kiện cho tất cả nút "Duyệt"
+            document.querySelectorAll(".btn-duyet").forEach(button => {
+                button.addEventListener("click", function () {
+                    duyet(this);
+                });
+            });
+        });
+
+        function duyet(button) {
+            let row = button.closest("tr"); // Lấy hàng chứa nút "Duyệt"
+            let tableApproved = document.getElementById("table-approved"); // Lấy bảng "Đã Duyệt"
+
+            // Tạo một hàng mới từ dữ liệu hàng hiện tại
+            let newRow = document.createElement("tr");
+            newRow.innerHTML = `
+                    <td>${row.cells[0].innerText}</td>
+                    <td>${row.cells[1].innerText}</td>
+                    <td>${row.cells[2].innerText}</td>
+                    <td>${row.cells[3].innerText}</td>
+                    <td>${row.cells[4].innerText}</td>
+                    <td><span class="status-approved">Đã Duyệt</span></td>
+                    `;
+
+            // Thêm hàng vào bảng "Đã Duyệt"
+            tableApproved.appendChild(newRow);
+
+            // Xóa hàng khỏi bảng "Chờ Duyệt"
+            row.remove();
+        }
+    </script>
+
+    <script>
+        document.getElementById('userMenu').addEventListener('click', function (event) {
+            event.stopPropagation();
+            document.getElementById('dropdownMenu').classList.toggle('show');
+        });
+        document.addEventListener('click', function (event) {
+            if (!document.getElementById('userMenu').contains(event.target)) {
+                document.getElementById('dropdownMenu').classList.remove('show');
+            }
+        });
+    </script>
+
