@@ -90,6 +90,7 @@
   <ItemGroup>
     <Content Include="Areas\Admin\CSS\login.css" />
     <Content Include="Areas\Admin\CSS\ThongBao.css" />
+    <Content Include="Areas\Admin\CSS\Thongke.css" />
     <Content Include="Areas\Admin\CSS\TrangNguoiQuanLy.css" />
     <Content Include="Areas\Admin\CSS\Trangthongtinquanly.css" />
     <Content Include="Areas\Admin\img\Nen.png" />
@@ -172,10 +173,10 @@
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\TrangNguoiQuanLy\Trangnguoiquanly.cshtml" />
-    <Content Include="Areas\Admin\Views\Trangthongtinquanly\Thongtinquanly.cshtml" />
     <Content Include="Areas\Admin\Views\Login\login.cshtml" />
     <Content Include="Areas\Admin\Views\ThongBao\Thongbao.cshtml" />
     <Content Include="Areas\Admin\Views\ThongKe\ThongKe.cshtml" />
+    <Content Include="Areas\Admin\Views\Trangthongtinquanly\Thongtinquanly.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

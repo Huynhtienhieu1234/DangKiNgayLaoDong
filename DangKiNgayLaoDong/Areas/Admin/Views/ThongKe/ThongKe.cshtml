@@ -3,7 +3,10 @@
     ViewBag.Title = "Thống Kê";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-
+@section Head {
+    <link rel="stylesheet" href="~/Areas/Admin/CSS/Thongke.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+}
 <div class="nav-content-text">
     <span class="nav-content-text">Thống Kê</span>
 </div>
@@ -30,20 +33,20 @@
     </div>
 
     <script>
-                function toggleMenu() {
-                    var menu = document.getElementById("menu");
-                    var button = document.querySelector(".menu-toggle i");
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            var button = document.querySelector(".menu-toggle i");
 
-                    if (menu.style.maxHeight === "0px" || menu.style.maxHeight === "") {
-                        menu.style.maxHeight = "500px"; // Mở menu
-                        button.classList.remove("fa-bars");
-                        button.classList.add("fa-times"); // Đổi icon thành "X"
-                    } else {
-                        menu.style.maxHeight = "0px"; // Đóng menu
-                        button.classList.remove("fa-times");
-                        button.classList.add("fa-bars"); // Đổi lại icon "Menu"
-                    }
-                }
+            if (menu.style.maxHeight === "0px" || menu.style.maxHeight === "") {
+                menu.style.maxHeight = "500px"; // Mở menu
+                button.classList.remove("fa-bars");
+                button.classList.add("fa-times"); // Đổi icon thành "X"
+            } else {
+                menu.style.maxHeight = "0px"; // Đóng menu
+                button.classList.remove("fa-times");
+                button.classList.add("fa-bars"); // Đổi lại icon "Menu"
+            }
+        }
     </script>
 
     <div class="col-md-9">
@@ -58,36 +61,36 @@
     </div>
 
     <script>
-                // Data for the chart
-                const data = {
-                    labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'],
-                    datasets: [{
-                        label: 'Đăng ký Ngày Lao động',
-                        data: [12, 19, 3, 5, 2, 3],
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        borderWidth: 1
-                    }]
-                };
+        // Data for the chart
+        const data = {
+            labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'],
+            datasets: [{
+                label: 'Đăng ký Ngày Lao động',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        };
 
-                // Configuration for the chart
-                const config = {
-                    type: 'bar', // Change this to 'line', 'pie', etc. for different types of charts
-                    data: data,
-                    options: {
-                        scales: {
-                            y: {
-                                beginAtZero: true
-                            }
-                        }
+        // Configuration for the chart
+        const config = {
+            type: 'bar', // Change this to 'line', 'pie', etc. for different types of charts
+            data: data,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
                     }
-                };
+                }
+            }
+        };
 
-                // Render the chart
-                const myChart = new Chart(
-                    document.getElementById('myChart'),
-                    config
-                );
+        // Render the chart
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
     </script>
 </div>
 
