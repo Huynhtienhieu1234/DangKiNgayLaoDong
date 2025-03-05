@@ -9,13 +9,15 @@
     <link rel="stylesheet" href="~/bootstrap-5.3.3-dist/js/bootstrap.min.js">
     <link rel="stylesheet" href="~/Areas/Admin/CSS/TrangNguoiQuanLy.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>@ViewBag.Title</title>
+    @RenderSection("Head", required: false)
 </head>
 
 <body>
     <nav>
         <div class="nav-content">
-            <a href="TrangNguoiQuanLy.html">
+            <a href="~/Admin/Trangnguoiquanly/TrangNguoiQuanLy">
                 <img src="~/image/LogoTruong.png" alt="Logo" class="logo">
             </a>
             <div class="search-container">
@@ -28,7 +30,7 @@
                 <label class="user-name">Huỳnh Tiến Hiểu</label>
                 <i class="fa fa-caret-down"></i>
                 <ul class="dropdown-menu" id="dropdownMenu">
-                    <li><a class="a-color" href="@Url.Action( "Thongtinquanly","Trangthongtinquanly", new { area = "Admin" })">Thông tin cá nhân</a></li>
+                    <li><a class="a-color" href="~/Admin/Trangthongtinquanly/Thongtinquanly">Thông tin cá nhân</a></li>
                     <li><a class="a-color" href="#">Đổi mật khẩu</a></li>
                     <li><a class="a-color" href="login.html">Đăng xuất</a></li>
                 </ul>
