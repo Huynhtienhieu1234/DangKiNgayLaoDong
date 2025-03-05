@@ -88,8 +88,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\CSS\login.css" />
     <Content Include="Areas\Admin\CSS\TrangNguoiQuanLy.css" />
     <Content Include="Areas\Admin\CSS\Trangthongtinquanly.css" />
+    <Content Include="Areas\Admin\img\Nen.png" />
     <Content Include="bootstrap-5.3.3-dist\css\bootstrap-grid.css" />
     <Content Include="bootstrap-5.3.3-dist\css\bootstrap-grid.min.css" />
     <Content Include="bootstrap-5.3.3-dist\css\bootstrap-grid.rtl.css" />
@@ -131,6 +133,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\TrangNguoiQuanLyController.cs" />
     <Compile Include="Areas\Admin\Controllers\TrangthongtinquanlyController.cs" />
     <Compile Include="Global.asax.cs">
@@ -167,6 +170,7 @@
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\TrangNguoiQuanLy\Trangnguoiquanly.cshtml" />
     <Content Include="Areas\Admin\Views\Trangthongtinquanly\Thongtinquanly.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\login.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
