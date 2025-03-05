@@ -166,7 +166,7 @@
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\TrangNguoiQuanLy\Trangnguoiquanly.cshtml" />
-    <Content Include="Areas\Admin\Views\Trangthongtinquanly\ThongtinQuanLy.cshtml" />
+    <Content Include="Areas\Admin\Views\Trangthongtinquanly\Thongtinquanly.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
