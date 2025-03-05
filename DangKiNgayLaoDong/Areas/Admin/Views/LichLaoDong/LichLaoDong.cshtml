@@ -1,0 +1,214 @@
+﻿
+@{
+    ViewBag.Title = "LichLaoDong";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section Head {
+    <link rel="stylesheet" href="~/Areas/Admin/CSS/LichLaoDong.css">
+}
+<div class="nav-content-text">
+    <span class="nav-content-text">Lịch Lao Động</span>
+</div>
+<div class="row">
+    <!-- Menu Bên Trái -->
+    <div class="col-md-3">
+        <!-- Nút bấm để mở menu -->
+        <button class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i> Menu
+        </button>
+
+        <!-- Danh sách menu -->
+        <div class="box-container-menu" id="menu">
+            <a href="~/Admin/TrangNguoiQuanly/TrangNguoiQuanly"><i class="fa fa-home"></i> Trang chủ</a>
+            <a href="TrangDKLD.html" class="icon-link">
+                <i class="fa-regular fa-calendar-plus"></i> Tạo lịch đăng
+                kí
+            </a>
+            <a href="~/Admin/LichlaoDong/LichLaodong" class="icon-link"><i class="fa fa-calendar"></i> Lịch Lao Động</a>
+            <a href="~/Admin/Thongbao/ThongBao"><i class="fas fa-bell"></i> Thông báo</a>
+            <a href="~/Admin/ThongKe/ThongKe"><i class="fa fa-bar-chart"></i> Thống kê</a>
+            <a href="XacNhanHoanThanh.html"><i class="fa fa-check-circle"></i> Xác nhận hoàn thành</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            var button = document.querySelector(".menu-toggle i");
+
+            if (menu.style.maxHeight === "0px" || menu.style.maxHeight === "") {
+                menu.style.maxHeight = "500px"; // Mở menu
+                button.classList.remove("fa-bars");
+                button.classList.add("fa-times");
+            } else {
+                menu.style.maxHeight = "0px"; // Đóng menu
+                button.classList.remove("fa-times");
+                button.classList.add("fa-bars"); // Đổi lại icon "Menu"
+            }
+        }
+    </script>
+    <div class="col-md-9">
+        <div class="Topcontainer">
+            <button class="Topcontainer-left" onclick="showPersonal()">
+                Đăng Kí Cá Nhân
+            </button>
+            <button class="Topcontainer-right" onclick="showClass()">
+                Đăng Kí Lớp
+            </button>
+            <input type="text" id="searchInput" placeholder="Tìm kiếm..."
+                   style="margin-left: 10px; padding: 10px; border-radius: 10px; border: 1px solid #ccc;">
+            <button onclick="searchFunction()"
+                    style="padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f44336; color: white; margin-left: 5px;">
+                Tìm
+            </button>
+        </div>
+        <script>
+            function searchFunction() {
+                var input, filter, table, tr, td, i, txtValue;
+                input = document.getElementById('searchInput');
+                filter = input.value.toUpperCase();
+                table = document.getElementById('table-pending');
+                tr = table.getElementsByTagName('tr');
+
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName('td')[1]; // Chỉ tìm kiếm trong cột "Họ và Tên"
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = '';
+                        } else {
+                            tr[i].style.display = 'none';
+                        }
+                    }
+                }
+            }
+
+        </script>
+
+        <div class="table-container" id="personalTable">
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Họ và Tên</th>
+                        <th>Lớp</th>
+                        <th>Loại lao Động</th>
+                        <th>Khu Vực</th>
+                    </tr>
+                </thead>
+                <tbody id="table-pending">
+                    <tr>
+                        <td>1</td>
+                        <td>Huỳnh Tiến Hiểu</td>
+                        <td>ĐHCNTT22A</td>
+                        <td>Lao Động Cá Nhân</td>
+                        <td>Khu A</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Nguyễn Văn B</td>
+                        <td>ĐHCNTT22B</td>
+                        <td>Lao Động Cá Nhân</td>
+                        <td>Khu D</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Trần Thị C</td>
+                        <td>ĐHCNTT22C</td>
+                        <td>Lao Động Cá Nhân</td>
+                        <td>Khu C</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Lê Văn D</td>
+                        <td>ĐHCNTT22D</td>
+                        <td>Lao Động Cá Nhân</td>
+                        <td>Khu B</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Phạm Thị E</td>
+                        <td>ĐHCNTT22E</td>
+                        <td>Lao Động Cá Nhân</td>
+                        <td>Khu A</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-container" id="classTable" style="display: none;">
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Họ và Tên</th>
+                        <th>Lớp</th>
+                        <th>Loại lao Động</th>
+                        <th>Khu Vực</th>
+                    </tr>
+                </thead>
+                <tbody id="table-pending">
+                    <tr>
+                        <td>1</td>
+                        <td>Huỳnh Tiến Hiểu</td>
+                        <td>ĐHCNTT22A</td>
+                        <td>Lao Động Theo Lớp</td>
+                        <td>Khu A</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Nguyễn Văn B</td>
+                        <td>ĐHCNTT22B</td>
+                        <td>Lao Động Theo Lớp</td>
+                        <td>Khu D</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Trần Thị C</td>
+                        <td>ĐHCNTT22C</td>
+                        <td>Lao Động Theo Lớp</td>
+                        <td>Khu C</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Lê Văn D</td>
+                        <td>ĐHCNTT22D</td>
+                        <td>Lao Động Theo Lớp</td>
+                        <td>Khu B</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Phạm Thị E</td>
+                        <td>ĐHCNTT22E</td>
+                        <td>Lao Động Theo Lớp</td>
+                        <td>Khu A</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <Script>
+        function showPersonal() {
+            document.getElementById('personalTable').style.display = 'block';
+            document.getElementById('classTable').style.display = 'none';
+        }
+
+        function showClass() {
+            document.getElementById('personalTable').style.display = 'none';
+            document.getElementById('classTable').style.display = 'block';
+        }
+    </Script>
+
+    <script>
+        document.getElementById('userMenu').addEventListener('click', function (event) {
+            event.stopPropagation();
+            document.getElementById('dropdownMenu').classList.toggle('show');
+        });
+        document.addEventListener('click', function (event) {
+            if (!document.getElementById('userMenu').contains(event.target)) {
+                document.getElementById('dropdownMenu').classList.remove('show');
+            }
+        });
+    </script>
+</div>
+
