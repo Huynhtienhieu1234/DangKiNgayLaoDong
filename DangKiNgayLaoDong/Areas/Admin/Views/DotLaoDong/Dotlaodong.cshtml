@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "Dotlaodong";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section Head {
+    <link rel="stylesheet" href="~/Areas/Admin/CSS/LichLaoDong.css">
+}
+<div class="nav-content-text">
+    <span class="nav-content-text">Tạo Đăng Kí </span>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <!-- Nút bấm để mở menu -->
+        <button class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i> Menu
+        </button>
+
+        <!-- Danh sách menu -->
+        <div class="box-container-menu" id="menu">
+            <a href="TrangNguoiQuanLy.html"><i class="fa fa-home"></i> Trang chủ</a>
+            <a href="TrangDKLD.html" class="icon-link">
+                <i class="fa-regular fa-calendar-plus"></i> Tạo lịch đăng
+                kí
+            </a>
+            <a href="LichLaoDong.html" class="icon-link"><i class="fa fa-calendar"></i> Lịch Lao Động</a>
+            <a href="ThongBao.html"><i class="fas fa-bell"></i> Thông báo</a>
+            <a href="Thongke.html"><i class="fa fa-bar-chart"></i> Thống kê</a>
+            <a href="XacNhanHoanThanh.html"><i class="fa fa-check-circle"></i> Xác nhận hoàn thành</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            var button = document.querySelector(".menu-toggle i");
+
+            if (menu.style.maxHeight === "0px" || menu.style.maxHeight === "") {
+                menu.style.maxHeight = "500px"; // Mở menu
+                button.classList.remove("fa-bars");
+                button.classList.add("fa-times"); // Đổi icon thành "X"
+            } else {
+                menu.style.maxHeight = "0px"; // Đóng menu
+                button.classList.remove("fa-times");
+                button.classList.add("fa-bars"); // Đổi lại icon "Menu"
+            }
+        }
+    </script>
+    <div class="col-md-9">
+        <div class="box-container-info">
+            <label for="labor-type">Chọn loại lao động:</label>
+            <select id="labor-type" class="form-select">
+                <option value="0">Chọn loại lao động</option>
+                <option value="1">Lao Động Cá Nhân</option>
+                <option value="2">Lao Động Nhóm</option>
+            </select>
+
+            <label for="location">Địa điểm:</label>
+            <select id="location" class="form-select">
+                <option value="0">Chọn địa điểm</option>
+                <option value="1">Khu A</option>
+                <option value="2">Khu B</option>
+                <option value="3">Khu C</option>
+            </select>
+            <label for="location">Chi Tiết Khu Lao Động:</label>
+            <select id="location" class="form-select">
+                <option value="1">Đường Từ NHB đến giảng đường 1</option>
+                <option value="2">Khu Trước A9</option>
+                <option value="3">Trước Dãy A1</option>
+            </select>
+            <label for="time">Thời gian:</label>
+            <select id="time" class="form-select">
+                <option value="0">Chọn thời gian</option>
+                <option value="1">Sáng: 7h30 - 8h</option>
+                <option value="2">Chiều: 13h30 - 14h</option>
+            </select>
+
+            <label for="quantity">Số Lượng:</label>
+            <select id="quantity" class="form-select">
+                <option value="0">Chọn số lượng</option>
+                <option value="1">1-5</option>
+                <option value="2">5-10</option>
+            </select>
+            <!-- Nút Thêm -->
+            <button id="add-button" class="btn btn-primary">Thêm</button>
+        </div>
+    </div>
+
+
+</div>
+

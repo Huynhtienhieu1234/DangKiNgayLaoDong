@@ -92,6 +92,7 @@
     <Content Include="Areas\Admin\CSS\login.css" />
     <Content Include="Areas\Admin\CSS\ThongBao.css" />
     <Content Include="Areas\Admin\CSS\Thongke.css" />
+    <Content Include="Areas\Admin\CSS\TrangDKLD.css" />
     <Content Include="Areas\Admin\CSS\TrangNguoiQuanLy.css" />
     <Content Include="Areas\Admin\CSS\Trangthongtinquanly.css" />
     <Content Include="Areas\Admin\CSS\XacNhanHoanThanh.css" />
@@ -137,6 +138,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\DotLaoDongController.cs" />
     <Compile Include="Areas\Admin\Controllers\LichLaoDongController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\ThongBaoController.cs" />
@@ -183,6 +185,7 @@
     <Content Include="Areas\Admin\Views\Trangthongtinquanly\Thongtinquanly.cshtml" />
     <Content Include="Areas\Admin\Views\LichLaoDong\LichLaoDong.cshtml" />
     <Content Include="Areas\Admin\Views\XacNhanHoanThanh\XacNhanHoanThanh.cshtml" />
+    <Content Include="Areas\Admin\Views\DotLaoDong\Dotlaodong.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
