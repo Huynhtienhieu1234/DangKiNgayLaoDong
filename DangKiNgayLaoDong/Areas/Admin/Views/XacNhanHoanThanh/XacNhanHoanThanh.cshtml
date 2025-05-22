@@ -19,13 +19,19 @@
 
         <!-- Danh sách menu -->
         <div class="box-container-menu" id="menu">
-            <a href="~/Admin/TrangNguoiQuanly/TrangNguoiQuanly"><i class="fa fa-home"></i> Trang chủ</a>
-            <a href="TrangDKLD.html" class="icon-link"><i class="fa-regular fa-calendar-plus"></i> Tạo lịch đăng kí</a>
-            <a href="~/Admin/LichlaoDong/LichLaodong" class="icon-link"><i class="fa fa-calendar"></i> Lịch Lao Động</a>
-            <a href="~/Admin/Thongbao/ThongBao"><i class="fas fa-bell"></i> Thông báo</a>
-            <a href="~/Admin/ThongKe/ThongKe"><i class="fa fa-bar-chart"></i> Thống kê</a>
-            <a href="~Admin/XacNhanHoanThanh/XacNhanHoanThanh"><i class="fa fa-check-circle"></i> Xác nhận hoàn thành</a>
-
+            <a href="TrangNguoiQuanLy.html"><i class="fa fa-home"></i> Trang chủ</a>
+            <a href="TrangDKLD.html" class="icon-link">
+                <i class="fa-regular fa-calendar-plus"></i> Tạo lịch đăng
+                kí
+            </a>
+            <a href="LichLaoDong.html" class="icon-link"><i class="fa fa-calendar"></i> Lịch Lao Động</a>
+            <a href="DiemDanh.html">
+                <i class="fa-regular fa-calendar-check"></i> Điểm Danh
+            </a>
+            <a href="ThongBao.html"><i class="fas fa-bell"></i> Thông báo</a>
+            <a href="Thongke.html"><i class="fa fa-bar-chart"></i> Thống kê</a>
+            <a href="XacNhanHoanThanh.html"><i class="fa fa-check-circle"></i> Xác nhận hoàn thành</a>
+            <a href="CanBoLop.html"><i class="fa-solid fa-users"></i> Cán Bộ Lớp</a>
         </div>
     </div>
 
@@ -52,66 +58,86 @@
             <table class="table table-hover table-bordered">
                 <thead class="table-warning">
                     <tr>
-                        <th>STT</th>
-                        <th>Họ và Tên</th>
-                        <th>Lớp</th>
-                        <th>Ngày Bắt Đầu</th>
-                        <th>Ngày Kết Thúc</th>
-                        <th>Kết Quả</th>
-                        <th>Trạng Thái</th>
-                        <th>Hành Động</th>
+                        <th class="text-center align-middle">STT</th>
+                        <th class="text-center align-middle">Họ và Tên</th>
+                        <th class="text-center align-middle">Lớp</th>
+                        <th class="text-center align-middle">Ngày Bắt Đầu</th>
+                        <th class="text-center align-middle">Ngày Kết Thúc</th>
+                        <th class="text-center align-middle">Kết Quả</th>
+                        <th class="text-center align-middle">Trạng Thái</th>
+                        <th class="text-center align-middle">Hành Động</th>
                     </tr>
                 </thead>
                 <tbody id="table-pending">
                     <tr>
-                        <td>1</td>
-                        <td>Huỳnh Tiến Hiểu</td>
-                        <td>ĐHCNTT22A</td>
-                        <td>01/02/2025</td>
-                        <td>18/02/2025</td>
-                        <td>18/18 Ngày</td>
-                        <td class="status-pending">Chờ duyệt</td>
-                        <td><button class="btn btn-success btn-duyet">Duyệt</button></td>
+                        <td class="text-center align-middle">1</td>
+                        <td class="text-center align-middle">Huỳnh Tiến Hiểu</td>
+                        <td class="text-center align-middle">ĐHCNTT22A</td>
+                        <td class="text-center align-middle">01/02/2025</td>
+                        <td class="text-center align-middle">18/02/2025</td>
+                        <td class="text-center align-middle">18/18 Ngày</td>
+                        <td class="text-center align-middle" class="status-pending">Chờ duyệt</td>
+                        <td class="text-center align-middle">
+                            <button class="btn btn-success btn-duyet">
+                                Duyệt
+                            </button>
+                        </td>
                     </tr>
                     <tr>
-                        <td>2</td>
-                        <td>Nguyễn Văn B</td>
-                        <td>ĐHCNTT22B</td>
-                        <td>02/02/2025</td>
-                        <td>18/02/2025</td>
-                        <td>18/18 Ngày</td>
-                        <td class="status-pending">Chờ duyệt</td>
-                        <td><button class="btn btn-success btn-duyet">Duyệt</button></td>
+                        <td class="text-center align-middle">2</td>
+                        <td class="text-center align-middle">Nguyễn Văn B</td>
+                        <td class="text-center align-middle">ĐHCNTT22B</td>
+                        <td class="text-center align-middle">02/02/2025</td>
+                        <td class="text-center align-middle">18/02/2025</td>
+                        <td class="text-center align-middle">18/18 Ngày</td>
+                        <td class="text-center align-middle" class="status-pending">Chờ duyệt</td>
+                        <td class="text-center align-middle">
+                            <button class="btn btn-success btn-duyet">
+                                Duyệt
+                            </button>
+                        </td>
                     </tr>
                     <tr>
-                        <td>3</td>
-                        <td>Trần Thị C</td>
-                        <td>ĐHCNTT22C</td>
-                        <td>03/02/2025</td>
-                        <td>18/02/2025</td>
-                        <td>18/18 Ngày</td>
-                        <td class="status-pending">Chờ duyệt</td>
-                        <td><button class="btn btn-success btn-duyet">Duyệt</button></td>
+                        <td class="text-center align-middle">3</td>
+                        <td class="text-center align-middle">Trần Thị C</td>
+                        <td class="text-center align-middle">ĐHCNTT22C</td>
+                        <td class="text-center align-middle">03/02/2025</td>
+                        <td class="text-center align-middle">18/02/2025</td>
+                        <td class="text-center align-middle">18/18 Ngày</td>
+                        <td class="text-center align-middle" class="status-pending">Chờ duyệt</td>
+                        <td class="text-center align-middle">
+                            <button class="btn btn-success btn-duyet">
+                                Duyệt
+                            </button>
+                        </td>
                     </tr>
                     <tr>
-                        <td>4</td>
-                        <td>Lê Văn D</td>
-                        <td>ĐHCNTT22D</td>
-                        <td>04/02/2025</td>
-                        <td>18/02/2025</td>
-                        <td>18/18 Ngày</td>
-                        <td class="status-pending">Chờ duyệt</td>
-                        <td><button class="btn btn-success btn-duyet">Duyệt</button></td>
+                        <td class="text-center align-middle">4</td>
+                        <td class="text-center align-middle">Lê Văn D</td>
+                        <td class="text-center align-middle">ĐHCNTT22D</td>
+                        <td class="text-center align-middle">04/02/2025</td>
+                        <td class="text-center align-middle">18/02/2025</td>
+                        <td class="text-center align-middle">18/18 Ngày</td>
+                        <td class="text-center align-middle" class="status-pending">Chờ duyệt</td>
+                        <td class="text-center align-middle">
+                            <button class="btn btn-success btn-duyet">
+                                Duyệt
+                            </button>
+                        </td>
                     </tr>
                     <tr>
-                        <td>5</td>
-                        <td>Phạm Thị E</td>
-                        <td>ĐHCNTT22E</td>
-                        <td>05/02/2025</td>
-                        <td>18/02/2025</td>
-                        <td>18/18 Ngày</td>
-                        <td class="status-pending">Chờ duyệt</td>
-                        <td><button class="btn btn-success btn-duyet">Duyệt</button></td>
+                        <td class="text-center align-middle">5</td>
+                        <td class="text-center align-middle">Phạm Thị E</td>
+                        <td class="text-center align-middle">ĐHCNTT22E</td>
+                        <td class="text-center align-middle">05/02/2025</td>
+                        <td class="text-center align-middle">18/02/2025</td>
+                        <td class="text-center align-middle">18/18 Ngày</td>
+                        <td class="text-center align-middle" class="status-pending">Chờ duyệt</td>
+                        <td class="text-center align-middle">
+                            <button class="btn btn-success btn-duyet">
+                                Duyệt
+                            </button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -123,18 +149,19 @@
             <table class="table table-hover table-bordered">
                 <thead class="table-success">
                     <tr>
-                        <th>STT</th>
-                        <th>Họ và Tên</th>
-                        <th>Lớp</th>
-                        <th>Ngày Bắt Đầu</th>
-                        <th>Ngày Kết Thúc</th>
-                        <th>Trạng Thái</th>
+                        <th class="text-center align-middle">STT</th>
+                        <th class="text-center align-middle">Họ và Tên</th>
+                        <th class="text-center align-middle">Lớp</th>
+                        <th class="text-center align-middle">Ngày Bắt Đầu</th>
+                        <th class="text-center align-middle">Ngày Kết Thúc</th>
+                        <th class="text-center align-middle">Trạng Thái</th>
                     </tr>
                 </thead>
                 <tbody id="table-approved"></tbody>
             </table>
         </div>
     </div>
+
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -153,13 +180,13 @@
             // Tạo một hàng mới từ dữ liệu hàng hiện tại
             let newRow = document.createElement("tr");
             newRow.innerHTML = `
-                    <td>${row.cells[0].innerText}</td>
-                    <td>${row.cells[1].innerText}</td>
-                    <td>${row.cells[2].innerText}</td>
-                    <td>${row.cells[3].innerText}</td>
-                    <td>${row.cells[4].innerText}</td>
-                    <td><span class="status-approved">Đã Duyệt</span></td>
-                    `;
+                <td>${row.cells[0].innerText}</td>
+                <td>${row.cells[1].innerText}</td>
+                <td>${row.cells[2].innerText}</td>
+                <td>${row.cells[3].innerText}</td>
+                <td>${row.cells[4].innerText}</td>
+                <td><span class="status-approved">Đã Duyệt</span></td>
+                `;
 
             // Thêm hàng vào bảng "Đã Duyệt"
             tableApproved.appendChild(newRow);
@@ -168,6 +195,8 @@
             row.remove();
         }
     </script>
+
+
 
     <script>
         document.getElementById('userMenu').addEventListener('click', function (event) {
@@ -180,4 +209,4 @@
             }
         });
     </script>
-
+</div>

@@ -51,6 +51,8 @@
       <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -140,6 +142,16 @@
     <Content Include="image\LogoTruong.png" />
     <Content Include="image\Nen.png" />
     <Content Include="image\Thongke.png" />
+    <Content Include="Models\QuanLyDangKiLaoDong.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanLyDangKiLaoDong.edmx</DependentUpon>
+      <LastGenOutput>QuanLyDangKiLaoDong.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\QuanLyDangKiLaoDong.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanLyDangKiLaoDong.edmx</DependentUpon>
+      <LastGenOutput>QuanLyDangKiLaoDong.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -147,14 +159,69 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DotLaoDongController.cs" />
     <Compile Include="Areas\Admin\Controllers\LichLaoDongController.cs" />
-    <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\ThongBaoController.cs" />
     <Compile Include="Areas\Admin\Controllers\ThongKeController.cs" />
     <Compile Include="Areas\Admin\Controllers\TrangNguoiQuanLyController.cs" />
     <Compile Include="Areas\Admin\Controllers\TrangthongtinquanlyController.cs" />
     <Compile Include="Areas\Admin\Controllers\XacNhanHoanThanhController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DiemDanhNgayLaoDong.cs">
+      <DependentUpon>QuanLyDangKiLaoDong.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Khoa.cs">
+      <DependentUpon>QuanLyDangKiLaoDong.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\Lop.cs">
+      <DependentUpon>QuanLyDangKiLaoDong.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhieuDangKy.cs">
+      <DependentUpon>QuanLyDangKiLaoDong.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhieuDuyet.cs">
+      <DependentUpon>QuanLyDangKiLaoDong.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhieuXacNhanHoanThanh.cs">
+      <DependentUpon>QuanLyDangKiLaoDong.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QuanLy.cs">
+      <DependentUpon>QuanLyDangKiLaoDong.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QuanLyDangKiLaoDong.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyDangKiLaoDong.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QuanLyDangKiLaoDong.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyDangKiLaoDong.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QuanLyDangKiLaoDong.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyDangKiLaoDong.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SinhVien.cs">
+      <DependentUpon>QuanLyDangKiLaoDong.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SoNgayLaoDong.cs">
+      <DependentUpon>QuanLyDangKiLaoDong.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>QuanLyDangKiLaoDong.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TaiKhoan.cs">
+      <DependentUpon>QuanLyDangKiLaoDong.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TaoDotNgayLaoDong.cs">
+      <DependentUpon>QuanLyDangKiLaoDong.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VaiTro.cs">
+      <DependentUpon>QuanLyDangKiLaoDong.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -193,7 +260,15 @@
     <Content Include="Areas\Admin\Views\LichLaoDong\LichLaoDong.cshtml" />
     <Content Include="Areas\Admin\Views\XacNhanHoanThanh\XacNhanHoanThanh.cshtml" />
     <Content Include="Areas\Admin\Views\DotLaoDong\Dotlaodong.cshtml" />
+    <EntityDeploy Include="Models\QuanLyDangKiLaoDong.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QuanLyDangKiLaoDong.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\QuanLyDangKiLaoDong.edmx.diagram">
+      <DependentUpon>QuanLyDangKiLaoDong.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
+    <Content Include="Views\Login\Dangnhap.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -204,8 +279,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
